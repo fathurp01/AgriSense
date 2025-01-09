@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Status Dashboard</title>
+</head>
+<body>
+    <!-- Kontainer untuk notifikasi -->
+    <div id="notification-container"></div>
+
+    <header class="navbar">
+        <div class="logo">
+            <div class="logo-icon">
+                <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo-image">
+            </div>
+            <h1 class="navbar-title">AgriSense</h1>
+        </div>
+    </header>
+
+    <div class="content">
+        <h2>Kondisi Real-Time Lahan Pertanian</h2>
+        <div class="real-time-data">
+            <div class="data-row">
+                <div class="data-card">
+                    <h3>Suhu</h3>
+                    <canvas id="temperatureSpeedometer"></canvas>
+                    <p id="status-Suhu">--°C</p>
+                </div>
+                <div class="chart-card">
+                    <canvas id="temperatureChart"></canvas>
+                </div>
+            </div>
+            <div class="data-row">
+                <div class="data-card">
+                    <h3>Kelembapan</h3>
+                    <canvas id="humiditySpeedometer"></canvas>
+                    <p id="status-Kelembapan">--%</p>
+                </div>
+                <div class="chart-card">
+                    <canvas id="humidityChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        © 2025 Kelompok 3. All Rights Reserved.
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
